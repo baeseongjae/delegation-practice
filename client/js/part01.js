@@ -42,23 +42,24 @@ const visualImage = getNode('.visual img');
 
 function handler(e){
   let target = e.target.closest('li');
-  let list = makeArray(navigation.children);
+  let targetA = e.target.closest('a');
+  if(!target || !targetA) return;
+
+  let list = Array.from(navigation.children);
   let index = attr(target,'data-index');
 
-  if(!target) return;
-
   list.forEach((item)=> {removeClass(item,'is-active');})
+  // = let arr = [...list];
+  // = Array.from(list);
+  // = Array.prototype.slice.call(list);
+  
+  // console.log(target.getAttribute('data-index'));
 
   attr(visualImage,'src',`./assets/part01/visual${index}.jpg`);
 
   attr(visualImage,'alt', data[index-1].alt);
-
-  //let arr = [...list];
-  //Array.from(list);
-  //Array.prototype.slice.call(list);
-
-  addClass(target,'is-active');
   
+  addClass(target,'is-active');
 }
 
 navigation.addEventListener('click',handler);

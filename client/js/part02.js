@@ -57,6 +57,8 @@ $('.navigation > li').click(function (e) {
 
 // 1 2 3 4
 
+
+
 let indexing = 0;
 
 

@@ -29,7 +29,16 @@ const swiper = new Swiper('.swiper',{
   speed:2000,
   pagination:{
     el: '.swiper-pagination',
-    clickable: true 
+    clickable: true, 
+    bulletClass: 'bullet',
+    bulletActiveClass: 'is-active',
+    renderBullet: function(index,className){
+      return /* html */`
+        <span class="${className}">
+          <img src="assets/part01/${data[index].src}" alt="${data[index].alt}" />
+        </span>
+      `
+    }
   }
 }) 
 

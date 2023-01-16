@@ -63,6 +63,30 @@
 
 
 
+.bullet{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  /* background: red; */
+  margin: 0.3rem;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: all .3s;
+}
+
+.bullet.is-active{
+  border: 4px solid rgb(175, 255, 14);
+  transform: translate(-5px,-5px);
+  box-shadow:  2px 2px 2px 2px rgba(0,0,0,0.45);
+}
+
+.bullet img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 
 @media screen and (max-width:900px) {
   

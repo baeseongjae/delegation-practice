@@ -80,6 +80,13 @@
   box-shadow:  2px 2px 2px 2px rgba(0,0,0,0.45);
 }
 
+
+.pagination{
+  display:flex;
+  justify-content: space-between;
+}
+
+
 .bullet img{
   width: 100%;
   height: 100%;

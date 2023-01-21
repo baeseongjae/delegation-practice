@@ -2,6 +2,10 @@ const contents = document.querySelector(".contents");
 const inputField = document.getElementById("comment37");
 const commentContainer = document.querySelector('.comment_container');
 
+function clearText(t){
+  t.value = '';
+}
+
 
 function handler(e){
   console.log(e.target.nodeName);
@@ -40,7 +44,7 @@ function handler(e){
       <div class="profile_img border_over"><img src="./assets/part03/tiger.png" alt=""></div>
           <div class="comment_field">
               <div class="text_container">
-                  <div class="name"><a href="#">심선범</a></div>
+                  <div class="name"><a href="#">배민재</a></div>
                   <div class="text_field">${inputField.value}</div>
               </div>
           </div>
@@ -48,6 +52,8 @@ function handler(e){
       `
 
     commentContainer.insertAdjacentHTML('beforeend',template);
+  
+    clearText(inputField);
   }
 
 }
@@ -55,7 +61,27 @@ function handler(e){
 
 contents.addEventListener('click',handler);
 
+inputField.addEventListener('keydown',(e)=>{
 
+  if(e.keyCode === 13){
+    console.log(inputField.value);
+
+    let template = `
+      <div class="id">
+      <div class="profile_img border_over"><img src="./assets/part03/tiger.png" alt=""></div>
+          <div class="comment_field">
+              <div class="text_container">
+                  <div class="name"><a href="#">심선범</a></div>
+                  <div class="text_field">${inputField.value}</div>
+              </div>
+          </div>
+      </div>
+      `
+      commentContainer.insertAdjacentHTML('beforeend',template);
+
+      clearText(inputField);
+  }
+})
 
 
 
